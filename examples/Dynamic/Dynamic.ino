@@ -1,6 +1,6 @@
 /*
   -------------------------
-  ESPDASH Lite - Dynamic Example
+  ESP-DASH-OSS - Dynamic Example
   -------------------------
 
   Skill Level: Advanced ( Must have good knowledge about heap, pointers and destructors )
@@ -9,12 +9,9 @@
   of some cards and then remove a card from dashboard after some time.
 
   Github: https://github.com/ayushsharma82/ESP-DASH
-  WiKi: https://docs.espdash.pro
 
   Works with ESP32, RP2040+W and RP2350+W based devices / projects.
   -------------------------------
-
-  Upgrade to ESP-DASH Pro: https://espdash.pro
 */
 
 #include <Arduino.h>

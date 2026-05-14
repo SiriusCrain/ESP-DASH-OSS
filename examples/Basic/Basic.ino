@@ -1,6 +1,6 @@
 /*
   -----------------------
-  ESPDASH Lite - Basic Example
+  ESP-DASH-OSS - Basic Example
   -----------------------
 
   Skill Level: Intermediate
@@ -9,12 +9,9 @@
   of some cards and then update them in realtime ( at 3s interval ).
 
   Github: https://github.com/ayushsharma82/ESP-DASH
-  WiKi: https://docs.espdash.pro
 
   Works with ESP32, RP2040+W and RP2350+W based devices / projects.
   -------------------------------
-
-  Upgrade to ESP-DASH Pro: https://espdash.pro
 */
 
 #include <Arduino.h>

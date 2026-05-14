@@ -9,7 +9,7 @@ export function App() {
   return (
     <>
       <header class="hdr">
-        <h1>ESP-DASH</h1>
+        <h1>ESP-DASH-OSS</h1>
         <span
           class={`dot${on ? " on" : ""}`}
           title={on ? "connected" : "disconnected"}
@@ -52,7 +52,7 @@ export function App() {
       </main>
 
       <footer>
-        <small>ESP-DASH OSS · Preact</small>
+        <small>ESP-DASH-OSS · Preact</small>
       </footer>
     </>
   );

@@ -1,6 +1,6 @@
 /*
   -----------------------------
-  ESPDASH Lite - AccessPoint Example
+  ESP-DASH-OSS - AccessPoint Example
   -----------------------------
 
   Skill Level: Intermediate
@@ -9,12 +9,9 @@
   and initialize our dashboard which can be accessed via 192.168.4.1 
 
   Github: https://github.com/ayushsharma82/ESP-DASH
-  WiKi: https://docs.espdash.pro
 
   Works with ESP32, RP2040+W and RP2350+W based devices / projects.
   -------------------------------
-
-  Upgrade to ESP-DASH Pro: https://espdash.pro
 */
 
 #include <Arduino.h>

@@ -1,6 +1,6 @@
 /*
   -----------------------
-  ESPDASH Lite - Chart Example
+  ESP-DASH-OSS - Chart Example
   -----------------------
 
   Skill Level: Intermediate
@@ -9,12 +9,9 @@
   and then update it at a regular interval.
 
   Github: https://github.com/ayushsharma82/ESP-DASH
-  WiKi: https://docs.espdash.pro
 
   Works with ESP32, RP2040+W and RP2350+W based devices / projects.
   -------------------------------
-
-  Upgrade to ESP-DASH Pro: https://espdash.pro
 */
 
 #include <Arduino.h>
