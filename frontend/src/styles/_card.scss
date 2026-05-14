@@ -1,0 +1,69 @@
+@use "variables" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: $space-3;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  background: $color-panel-elev;
+  border-radius: $radius-lg;
+  padding: 0.9rem 1.1rem;
+  min-height: 92px;
+}
+
+.card-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--neutral {
+    background: $color-neutral-bg;
+    color: $color-neutral;
+  }
+  &--danger {
+    background: $color-danger-bg;
+    color: $color-danger;
+  }
+  &--info {
+    background: $color-info-bg;
+    color: $color-info;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  min-width: 0;
+}
+
+.card-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.card-value {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $color-neutral;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-symbol {
+  font-size: 1rem;
+  color: $color-muted;
+  margin-left: 0.15rem;
+}
