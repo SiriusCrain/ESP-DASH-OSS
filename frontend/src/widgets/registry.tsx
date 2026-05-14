@@ -1,10 +1,11 @@
-import { ComponentType } from 'preact';
-import type { Widget } from '../lib/state';
-import { GenericCard } from './GenericCard';
-import { TemperatureCard } from './TemperatureCard';
-import { HumidityCard } from './HumidityCard';
-import { IndicatorButtonCard } from './IndicatorButtonCard';
-import { ProgressCard } from './ProgressCard';
+import { ComponentType } from "preact";
+import type { Widget } from "../lib/state";
+import { GenericCard } from "./GenericCard";
+import { TemperatureCard } from "./TemperatureCard";
+import { HumidityCard } from "./HumidityCard";
+import { IndicatorButtonCard } from "./IndicatorButtonCard";
+import { ProgressCard } from "./ProgressCard";
+import { FeedbackCard } from "./FeedbackCard";
 
 export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   gc: GenericCard,
@@ -12,6 +13,7 @@ export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   hc: HumidityCard,
   ibc: IndicatorButtonCard,
   pc: ProgressCard,
+  fc: FeedbackCard,
 };
 
 export function renderWidget(widget: Widget) {

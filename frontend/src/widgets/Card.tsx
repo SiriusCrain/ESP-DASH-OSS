@@ -1,6 +1,6 @@
-import { ComponentChildren } from 'preact';
+import { ComponentChildren } from "preact";
 
-type Tone = 'neutral' | 'danger' | 'info';
+type Tone = "neutral" | "danger" | "info" | "success" | "warning";
 
 interface CardProps {
   name: string;
@@ -9,7 +9,7 @@ interface CardProps {
   tone?: Tone;
 }
 
-export function Card({ name, value, icon, tone = 'neutral' }: CardProps) {
+export function Card({ name, value, icon, tone = "neutral" }: CardProps) {
   return (
     <div class="card">
       <div class={`card-icon card-icon--${tone}`}>{icon}</div>
