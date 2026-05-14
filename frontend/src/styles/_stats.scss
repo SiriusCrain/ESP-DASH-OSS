@@ -1,25 +1,25 @@
 @use "variables" as *;
 
 .stats-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
 
-  li {
-    display: flex;
-    align-items: center;
-    gap: $space-2;
-    padding: 0.45rem 0.6rem;
-    background: $color-panel-elev;
-    border-radius: $radius-sm;
-    font-size: 0.9rem;
-  }
+    li {
+        display: flex;
+        align-items: center;
+        gap: $space-2;
+        padding: 0.45rem 0.6rem;
+        background: $color-panel-elev;
+        border-radius: $radius-sm;
+        font-size: 0.9rem;
+    }
 
-  code {
-    font-family: ui-monospace, SFMono-Regular, monospace;
-    color: $color-muted;
-    font-size: 0.82rem;
-  }
+    code {
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        color: $color-muted;
+        font-size: 0.82rem;
+    }
 }

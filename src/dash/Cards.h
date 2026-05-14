@@ -273,6 +273,51 @@ namespace dash {
       std::function<void(bool state)> _callback = nullptr;
   };
 
+  // Indicator Button Card
+  // A push button with a user-controlled status indicator dot.
+  // Templated on the displayed value type for parity with other ValueCards;
+  // the push event is value-less and fires the no-arg onPush callback.
+  template <typename T = bool, uint8_t Precision = 2, std::enable_if_t<std::is_integral_v<T> || std::is_floating_point_v<T>, bool> = true>
+  class IndicatorButtonCard : public ValueCard<T, Precision> {
+    public:
+      IndicatorButtonCard(ESPDash& dashboard, const char* name) : ValueCard<T, Precision>(dashboard, name) {}
+      IndicatorButtonCard(const char* name) : ValueCard<T, Precision>(name) {}
+      virtual ~IndicatorButtonCard() = default;
+      virtual const char* type() const override { return "ibc"; }
+
+      Status status() const { return _status; }
+      bool indicatorVisible() const { return _show; }
+
+      bool setIndicator(bool show, Status status) {
+        if (_show == show && _status == status)
+          return false;
+        _show = show;
+        _status = status;
+        ValueCard<T, Precision>::setChange(dash::Component::Property::STATUS);
+        return true;
+      }
+
+      void onPush(std::function<void()> callback) { _callback = callback; }
+
+      virtual void onEvent(const JsonObject&) override {
+        if (_callback)
+          _callback();
+      }
+
+      virtual void toJson(const JsonObject& json, bool onlyChanges) const override {
+        ValueCard<T, Precision>::toJson(json, onlyChanges);
+        if (!onlyChanges || ValueCard<T, Precision>::hasChanged(dash::Component::Property::STATUS)) {
+          json["show"] = _show;
+          json["status"] = static_cast<uint8_t>(_status);
+        }
+      }
+
+    protected:
+      bool _show = false;
+      Status _status = Status::NONE;
+      std::function<void()> _callback = nullptr;
+  };
+
   // Progress Card
   template <typename T = int, uint8_t Precision = 2, std::enable_if_t<std::is_integral_v<T> || std::is_floating_point_v<T>, bool> = true>
   class ProgressCard : public ValueCard<T, Precision> {

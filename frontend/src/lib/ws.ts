@@ -40,3 +40,10 @@ socket.addEventListener('message', (ev) => {
 setInterval(() => {
   if (socket.readyState === WebSocket.OPEN) socket.send(encode({ command: 'ping' }));
 }, 25_000);
+
+export function sendEvent(id: number, value?: boolean | number | string) {
+  if (socket.readyState !== WebSocket.OPEN) return;
+  const msg: Record<string, unknown> = { id };
+  if (value !== undefined) msg.value = value;
+  socket.send(encode(msg));
+}

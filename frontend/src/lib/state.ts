@@ -15,6 +15,8 @@ export const WidgetSchema = v.object({
   step: v.optional(v.number()),
   x: v.optional(v.array(Axis)),
   y: v.optional(v.array(Axis)),
+  show: v.optional(v.boolean()),
+  status: v.optional(v.number()),
 });
 export type Widget = v.InferOutput<typeof WidgetSchema>;
 

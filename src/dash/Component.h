@@ -22,6 +22,7 @@ namespace dash {
         STEP,
         SYMBOL,
         VALUE,
+        STATUS,
       };
 
       virtual ~Component() = default;

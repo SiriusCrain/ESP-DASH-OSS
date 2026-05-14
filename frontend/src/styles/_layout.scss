@@ -1,64 +1,64 @@
 @use "variables" as *;
 
 .hdr {
-  display: flex;
-  align-items: center;
-  gap: $space-3;
-  padding: $space-4 $space-6;
-  background: $color-panel;
-  border-bottom: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    padding: $space-4 $space-6;
+    background: $color-panel;
+    border-bottom: 1px solid $color-border;
 
-  h1 {
-    margin: 0;
-    font-size: 1.15rem;
-    letter-spacing: 0.04em;
-    font-weight: 600;
-  }
+    h1 {
+        margin: 0;
+        font-size: 1.15rem;
+        letter-spacing: 0.04em;
+        font-weight: 600;
+    }
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: $color-danger;
-  box-shadow: 0 0 6px rgba(226, 73, 90, 0.6);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $color-danger;
+    box-shadow: 0 0 6px rgba(226, 73, 90, 0.6);
 
-  &.on {
-    background: $color-ok;
-    box-shadow: 0 0 6px rgba(78, 210, 122, 0.6);
-  }
+    &.on {
+        background: $color-ok;
+        box-shadow: 0 0 6px rgba(78, 210, 122, 0.6);
+    }
 }
 
 main {
-  padding: $space-5 $space-6;
-  display: grid;
-  gap: $space-5;
-  max-width: 960px;
-  margin: 0 auto;
+    padding: $space-5 $space-6;
+    display: grid;
+    gap: $space-5;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 section {
-  background: $color-panel;
-  border: 1px solid $color-border;
-  border-radius: $radius-md;
-  padding: $space-4 $space-5;
+    background: $color-panel;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $space-4 $space-5;
 
-  h2 {
-    margin: 0 0 $space-3 0;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: $color-neutral;
+    h2 {
+        margin: 0 0 $space-3 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: $color-neutral;
 
-    small {
-      color: $color-muted;
-      font-weight: 400;
-      margin-left: 0.4rem;
+        small {
+            color: $color-muted;
+            font-weight: 400;
+            margin-left: 0.4rem;
+        }
     }
-  }
 }
 
 footer {
-  text-align: center;
-  padding: $space-4;
-  color: #5e6675;
+    text-align: center;
+    padding: $space-4;
+    color: #5e6675;
 }

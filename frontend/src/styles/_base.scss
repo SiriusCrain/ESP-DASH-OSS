@@ -1,18 +1,23 @@
 @use "variables" as *;
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: $color-bg;
-  color: $color-text;
+    margin: 0;
+    font-family:
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        sans-serif;
+    background: $color-bg;
+    color: $color-text;
 }
 
 .muted {
-  color: $color-muted;
-  margin: 0;
-  font-size: 0.85rem;
+    color: $color-muted;
+    margin: 0;
+    font-size: 0.85rem;
 }
