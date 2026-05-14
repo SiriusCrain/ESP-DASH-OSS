@@ -6,6 +6,7 @@ import { HumidityCard } from "./HumidityCard";
 import { IndicatorButtonCard } from "./IndicatorButtonCard";
 import { ProgressCard } from "./ProgressCard";
 import { FeedbackCard } from "./FeedbackCard";
+import { ToggleButtonCard } from "./ToggleButtonCard";
 
 export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   gc: GenericCard,
@@ -14,6 +15,7 @@ export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   ibc: IndicatorButtonCard,
   pc: ProgressCard,
   fc: FeedbackCard,
+  tbc: ToggleButtonCard,
 };
 
 export function renderWidget(widget: Widget) {
