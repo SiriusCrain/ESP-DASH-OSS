@@ -3,6 +3,6 @@
 
 #include <Arduino.h>
 
-extern const uint8_t DASH_HTML[18168];
+extern const uint8_t DASH_HTML[18391];
 
 #endif

@@ -73,6 +73,43 @@
     gap: $space-3;
 }
 
+.card--progress {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: $space-4;
+
+    .card-name,
+    .card-value,
+    .card-symbol {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $color-text;
+    }
+}
+
+.progress-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $space-3;
+}
+
+.progress-track {
+    width: 100%;
+    height: 6px;
+    background: $color-neutral-bg;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #1d4ed8;
+    border-radius: inherit;
+    transition: width 0.15s;
+}
+
 .ibtn {
     appearance: none;
     border: 0;

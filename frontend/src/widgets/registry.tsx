@@ -4,12 +4,14 @@ import { GenericCard } from './GenericCard';
 import { TemperatureCard } from './TemperatureCard';
 import { HumidityCard } from './HumidityCard';
 import { IndicatorButtonCard } from './IndicatorButtonCard';
+import { ProgressCard } from './ProgressCard';
 
 export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   gc: GenericCard,
   tc: TemperatureCard,
   hc: HumidityCard,
   ibc: IndicatorButtonCard,
+  pc: ProgressCard,
 };
 
 export function renderWidget(widget: Widget) {
