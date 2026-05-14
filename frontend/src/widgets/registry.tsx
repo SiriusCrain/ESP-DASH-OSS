@@ -1,9 +1,11 @@
 import { ComponentType } from 'preact';
 import type { Widget } from '../lib/state';
 import { GenericCard } from './GenericCard';
+import { TemperatureCard } from './TemperatureCard';
 
 export const registry: Record<string, ComponentType<{ widget: Widget }>> = {
   gc: GenericCard,
+  tc: TemperatureCard,
 };
 
 export function renderWidget(widget: Widget) {
