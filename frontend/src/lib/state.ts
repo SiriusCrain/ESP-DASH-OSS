@@ -1,5 +1,5 @@
-import { signal } from '@preact/signals';
-import * as v from 'valibot';
+import { signal } from "@preact/signals";
+import * as v from "valibot";
 
 const Value = v.union([v.string(), v.number(), v.boolean()]);
 const Axis = v.union([v.string(), v.number()]);
@@ -17,6 +17,7 @@ export const WidgetSchema = v.object({
   y: v.optional(v.array(Axis)),
   show: v.optional(v.boolean()),
   status: v.optional(v.number()),
+  tab: v.optional(v.number()),
 });
 export type Widget = v.InferOutput<typeof WidgetSchema>;
 
@@ -27,17 +28,32 @@ export const StatisticSchema = v.object({
 });
 export type Statistic = v.InferOutput<typeof StatisticSchema>;
 
+export const TabSchema = v.object({
+  id: v.number(),
+  n: v.string(),
+  i: v.number(),
+});
+export type Tab = v.InferOutput<typeof TabSchema>;
+
 export const FrameSchema = v.object({
   command: v.picklist([
-    'update:layout:begin',
-    'update:layout:next',
-    'update:components',
-    'pong',
+    "update:layout:begin",
+    "update:layout:next",
+    "update:components",
+    "pong",
   ]),
   widgets: v.optional(v.array(WidgetSchema)),
   statistics: v.optional(v.array(StatisticSchema)),
+  tabs: v.optional(v.array(TabSchema)),
 });
 
 export const connected = signal(false);
 export const widgets = signal<Record<number, Widget>>({});
 export const statistics = signal<Record<number, Statistic>>({});
+export const tabs = signal<Record<number, Tab>>({});
+export const activeTab = signal<number>(0); // 0 = Overview
+export const sidebarOpen = signal(
+  window.matchMedia("(min-width: 768px)").matches,
+);
+
+export const STATISTICS_VIEW = -1;

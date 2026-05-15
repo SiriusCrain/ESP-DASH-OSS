@@ -153,6 +153,17 @@ void ESPDash::remove(dash::Component& component) {
   _components.remove(&component);
 }
 
+void ESPDash::addTab(dash::Tab& tab) {
+  _tabs.push_back(&tab);
+}
+
+namespace dash {
+  Tab::Tab(ESPDash& dashboard, const char* name, Icon icon)
+    : _id(nextId()), _name(name), _icon(icon) {
+    dashboard.addTab(*this);
+  }
+}
+
 // generates the layout JSON string to the frontend
 void ESPDash::generateLayoutJSON(AsyncWebSocketClient* client, bool changes_only, const dash::Component* onlyComponent) {
 #ifdef DASH_DEBUG
@@ -185,6 +196,11 @@ void ESPDash::generateLayoutJSON(AsyncWebSocketClient* client, bool changes_only
 
   } else {
     doc["command"] = "update:layout:begin";
+    if (!_tabs.empty()) {
+      JsonArray tabs = doc["tabs"].to<JsonArray>();
+      for (auto t : _tabs)
+        t->toJson(tabs.add<JsonObject>());
+    }
     send(client, doc);
 
     if (generateLayoutJSON(client, false, nullptr, doc, dash::Component::Family::STATISTIC))

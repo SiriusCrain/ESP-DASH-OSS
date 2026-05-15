@@ -41,6 +41,7 @@ Repository URL: https://github.com/ayushsharma82/ESP-DASH
 #include "dash/Component.h"
 #include "dash/Defines.h"
 #include "dash/Statistics.h"
+#include "dash/Tab.h"
 #include "dash/Widget.h"
 
 // Controls the payload size: as soon as the payload size reaches this value, the payload is sent to the client
@@ -66,6 +67,7 @@ class ESPDash {
 
     std::list<dash::Component*> _components;      // all components
     std::list<dash::Component*> _componentsOwned; // components created by ESPDash (like statistics), which should be deleted in the destructor
+    std::list<dash::Tab*> _tabs;                  // registered tabs
     bool basic_auth = false;
     dash::string username;
     dash::string password;
@@ -94,6 +96,9 @@ class ESPDash {
     // Add a component to the dashboard and return true if the component was added, false if the component ID was already present
     bool add(dash::Component& component);
     void remove(dash::Component& component);
+
+    // Register a tab so it appears in the sidebar
+    void addTab(dash::Tab& tab);
 
     // Notify client side to update values
     void sendUpdates(bool force = false);
